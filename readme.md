@@ -1,1 +1,1 @@
-[![CircleCI](https://circleci.com/github/ArRomanov/selenium-ci-sample.svg?style=svg)](https://circleci.com/github/ArRomanov/selenium-ci-sample)
+[![CircleCI](https://circleci.com/gh/ArRomanov/selenium-ci-sample.svg?style=svg)](https://circleci.com/gh/ArRomanov/selenium-ci-sample)
