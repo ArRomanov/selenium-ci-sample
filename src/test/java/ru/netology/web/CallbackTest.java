@@ -29,16 +29,17 @@ class CallbackTest {
 
     @BeforeEach
     void setUp() {
-        if (isHeadles) {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--headless");
-            driver = new ChromeDriver(options);
-            driver = new ChromeDriver();
-        } else {
-            driver = new ChromeDriver();
-        }
+//        if (isHeadles) {
+//            ChromeOptions options = new ChromeOptions();
+//            options.addArguments("--disable-dev-shm-usage");
+//            options.addArguments("--no-sandbox");
+//            options.addArguments("--headless");
+//            driver = new ChromeDriver(options);
+//            driver = new ChromeDriver();
+//        } else {
+//            driver = new ChromeDriver();
+//        }
+        driver = new ChromeDriver();
     }
 
     @AfterEach
