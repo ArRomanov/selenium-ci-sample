@@ -15,12 +15,12 @@ jobs:
           command: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
                    && dpkg -i --force-depends google-chrome-stable_current_amd64.deb
       - run:
-          - name: run sut in background
-          - command: java -jar artifacts/app-callback.jar &
+          name: run sut in background
+          command: java -jar artifacts/app-callback.jar &
       - run:
-          - name: give permission for ./gradlew
-          - command: chmod +x ./gradlew
+          name: give permission for ./gradlew
+          command: chmod +x ./gradlew
       - run:
-          - name: run tests
-          - command: ./gradlew test -Dselenium.headless=true
+          name: run tests
+          command: ./gradlew test -Dselenium.headless=true
 
