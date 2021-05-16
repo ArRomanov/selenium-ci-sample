@@ -22,4 +22,4 @@ jobs:
           command: chmod +x ./gradlew
       - run:
           name: run tests
-          command: ./gradlew test -Dselenium.headless=true
+          command: ./gradlew test -Dselenium.headless=true --info
