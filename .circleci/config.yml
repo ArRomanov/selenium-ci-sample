@@ -13,9 +13,11 @@ jobs:
           command: java -jar artifacts/app-callback.jar
           background: true
       - run:
+          name: wait sut running
+          command: sleep 5
+      - run:
           name: give permission for ./gradlew
           command: chmod +x ./gradlew
       - run:
           name: wait starting sut and run tests
-          command: sleep 5
-            && ./gradlew test --info
+          command: ./gradlew test --info
