@@ -57,7 +57,7 @@ class CallbackTest {
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
         String text = driver.findElement(By.className("alert-success")).getText();
-        assertEquals("Ваша заявка успешно отправлена!", text.trim());
+        assertEquals("Ваша заявка успешно не отправлена!", text.trim());
     }
 
     @Test

@@ -3,19 +3,19 @@ version: 2
 jobs:
   build:
     docker:
-#      use jdk image with browsers
+      #use jdk image with browsers
       - image: circleci/openjdk:11-jdk-browsers
     steps:
-#      clone repository
+      #clone repository
       - checkout
       - run:
           name: run sut in background
           command: java -jar artifacts/app-callback.jar
-                   && sleep 5
           background: true
       - run:
           name: give permission for ./gradlew
           command: chmod +x ./gradlew
       - run:
-          name: run tests
-          command: ./gradlew test --info
+          name: wait starting sut and run tests
+          command: sleep 5
+            && ./gradlew test --info
