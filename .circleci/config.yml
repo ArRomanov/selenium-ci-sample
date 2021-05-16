@@ -19,5 +19,5 @@ jobs:
           name: give permission for ./gradlew
           command: chmod +x ./gradlew
       - run:
-          name: wait starting sut and run tests
+          name: run tests
           command: ./gradlew test --info
