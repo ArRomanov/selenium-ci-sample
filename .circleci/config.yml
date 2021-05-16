@@ -16,10 +16,12 @@ jobs:
 #                   && sudo apt-get install -f
       - run:
           name: run sut in background
-          command: java -jar artifacts/app-callback.jar &
+          command: java -jar artifacts/app-callback.jar
+          background: true
       - run:
           name: give permission for ./gradlew
           command: chmod +x ./gradlew
+                   && sleep 5
       - run:
           name: run tests
           command: ./gradlew test -Dselenium.headless=true --info
