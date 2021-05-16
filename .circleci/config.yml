@@ -7,15 +7,20 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:11-jdk
-
     steps:
-      - name: install chrome browser
-      - run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      - run: dpkg -i --force-depends google-chrome-stable_current_amd64.deb
-      - name: clone repository
+      # clone repository
       - checkout
-      - name: run sut in background
-      - run: java -jar artifacts/app-callback.jar &
-      - name: give permission for ./gradlew and run tests
-      - run: chmod +x ./gradlew
-      - run: ./gradlew test -Dselenium.headless=true
+      - run:
+          name: install chrome browser
+          command: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+                   && dpkg -i --force-depends google-chrome-stable_current_amd64.deb
+      - run:
+          - name: run sut in background
+          - command: java -jar artifacts/app-callback.jar &
+      - run:
+          - name: give permission for ./gradlew
+          - command: chmod +x ./gradlew
+      - run:
+          - name: run tests
+          - command: ./gradlew test -Dselenium.headless=true
+
